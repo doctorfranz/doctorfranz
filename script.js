@@ -1,7 +1,4 @@
-window.addEventListener('load', function() {
-  // simulate training process for 5 seconds
-  setTimeout(function() {
-    var loadingContainer = document.querySelector('.loading-container');
-    loadingContainer.parentNode.removeChild(loadingContainer);
-  }, 5000);
-});
+// Wait for the window to load before fading out the loading screen
+window.onload = function() {
+  document.querySelector('.loading-container').classList.add('fade-out');
+}
