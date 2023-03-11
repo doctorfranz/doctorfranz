@@ -4,7 +4,7 @@ body {
 }
 
 .progress-bar-container {
-  background-color: rgb(121, 121, 121);
+  background-color: #FDD023;
   height: 30px;
   position: relative;
   margin: 50px auto;
