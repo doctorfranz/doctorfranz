@@ -1,4 +1,13 @@
-// Wait for the window to load before fading out the loading screen
 window.onload = function() {
-  document.querySelector('.loading-container').classList.add('fade-out');
+  var progressBar = document.querySelector(".progress-bar");
+
+  var width = 0;
+  var interval = setInterval(function() {
+    if (width >= 100) {
+      clearInterval(interval);
+    } else {
+      width += 10;
+      progressBar.style.width = width + "%";
+    }
+  }, 500);
 }
