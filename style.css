@@ -5,6 +5,14 @@ body {
   font-family: sans-serif;
 }
 
+#network {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .progress-bar-container {
   background-color: rgb(121, 121, 121);
   height: 30px;
@@ -13,6 +21,7 @@ body {
   width: 90%;
   max-width: 400px;
   border-radius: 20px;
+  z-index: 1;
 }
 
 .progress-bar {
