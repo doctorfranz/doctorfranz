@@ -11,6 +11,9 @@ body {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  background-image: url('images/network.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .progress-bar-container {
