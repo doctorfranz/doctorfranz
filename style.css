@@ -3,7 +3,11 @@ body {
   padding: 0;
   font-size: 16px;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
 
 #network {
   position: fixed;
@@ -20,8 +24,8 @@ body {
   background-color: rgb(121, 121, 121);
   height: 30px;
   position: relative;
-  margin: 50px auto;
-  width: 90%;
+  margin: 20px auto;
+  width: 100%;
   max-width: 400px;
   border-radius: 20px;
   z-index: 1;
@@ -62,7 +66,7 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .button-container a {
@@ -153,6 +157,162 @@ body {
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+
+.apps-section {
+  background: rgba(44, 60, 85, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  position: relative;
+}
+
+.top-section {
+  background: rgba(44, 60, 85, 0.5);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px auto 20px auto;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  position: relative;
+  text-align: center;
+}
+
+.top-section .progress-text {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.top-section .button-container a {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  margin-bottom: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-links {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.profile-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.profile-link:hover {
+  background: rgba(229, 145, 46, 0.3);
+  border-color: rgba(229, 145, 46, 0.5);
+  transform: translateY(-2px);
+}
+
+.progress-bar-container.small {
+  max-width: 250px;
+  height: 20px;
+  margin: 15px auto;
+}
+
+.progress-bar-container.small .progress-text {
+  font-size: 14px;
+  top: calc(100% + 5px);
+}
+
+.button-container.small a {
+  padding: 15px 30px;
+  font-size: 14px;
+  transform: scale(0.7);
+}
+
+@media screen and (max-width: 480px) {
+  .profile-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .headshot {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.app-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.app-box {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 30px;
+  min-width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(229, 145, 46, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.app-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(229, 145, 46, 0.1);
+  border-color: rgb(229, 145, 46);
+}
+
+.app-box h3 {
+  margin: 0 0 10px 0;
+  color: #002C55;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.app-box p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .app-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .app-box {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
