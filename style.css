@@ -1,3 +1,90 @@
+Of course! I can fix those mobile layout issues for you. The blue bar, centering, and button alignment can all be adjusted with some changes to your HTML and CSS.
+
+Here are the updated files with all the fixes applied.
+
+File: index.html
+
+I've removed the theme-color meta tag that was causing the blue bar on mobile browsers.
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctor Franz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Doctor Franz">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="top-section">
+    <img src="images/RFranz.jpeg" alt="Dr. Ronald Franz" class="headshot">
+    
+    <div class="profile-links">
+      <a href="https://psychiatry.wustl.edu/people/ronald-franz-ii/" target="_blank" class="profile-link">
+        School Profile
+      </a>
+      <a href="https://www.doximity.com/pub/ronald-franz-md-edb76512" target="_blank" class="profile-link">
+        Doximity
+      </a>
+      <a href="https://health.usnews.com/doctors/ronald-franz-3912883" target="_blank" class="profile-link">
+        US Health News
+      </a>
+    </div>
+    
+    <div class="progress-bar-container small">
+      <div class="progress-bar"></div>
+      <div class="progress-text">education in progress</div>
+    </div>
+    <div class="button-container small">
+      <a href="files/CV.pdf" target="_blank">
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        <span> </span>
+        Download CV
+      </a>
+    </div>
+  </div>
+  
+  <div class="apps-section">
+    <div class="app-links">
+      <div class="app-box" onclick="window.open('https://zeno-integrations.com', '_blank')">
+        <h3>Zeno Integrations</h3>
+        <p>AI Assisted Healthcare</p>
+      </div>
+      <div class="app-box" onclick="window.open('https://etoh.doctorfranz.com', '_blank')">
+        <h3>ETOH</h3>
+        <p>Alcohol Intake Monitor</p>
+      </div>
+      <div class="app-box" onclick="window.open('https://wiki.doctorfranz.com', '_blank')">
+        <h3>Wiki</h3>
+        <p>Psychiatry Knowledge Base</p>
+      </div>
+    </div>
+  </div>
+
+  <video autoplay muted loop id="network" poster="images/network.png" playsinline>
+    <source src="videos/network.mp4" type="video/mp4">
+  </video>
+  <script src="script.js"></script>
+</body>
+</html>
+
+File: style.css
+
+I've made several adjustments here:
+
+    Added a fallback background-color to the body.
+
+    Improved the centering logic for the .top-section and .apps-section to be more reliable.
+
+    Removed the rule that stacked the profile links vertically on small screens, ensuring they stay in a row. I also adjusted their padding to help them fit better.
+
+CSS
+
 body {
   margin: 0;
   padding: 0;
@@ -13,6 +100,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background-color: #2C3C55;
 }
 
 
@@ -82,13 +170,13 @@ body {
   .top-section {
     margin: 20px auto;
     padding: 20px;
-    width: 95%;
+    width: 90%;
     max-width: none;
   }
   
   .apps-section {
     padding: 25px;
-    width: 95%;
+    width: 90%;
     max-width: none;
     margin: 20px auto;
   }
@@ -201,6 +289,7 @@ body {
   margin: 20px auto;
   max-width: 800px;
   width: 90%;
+  box-sizing: border-box;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 10;
@@ -208,8 +297,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .top-section {
@@ -220,6 +307,7 @@ body {
   margin: 40px auto 20px auto;
   max-width: 600px;
   width: 90%;
+  box-sizing: border-box;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 10;
@@ -229,8 +317,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .top-section .progress-text {
@@ -304,7 +390,7 @@ body {
 
 @media screen and (max-width: 480px) {
   .profile-links {
-    flex-direction: column;
+    /* flex-direction: column; -- Removed to keep links in a row */
     align-items: center;
   }
   
@@ -334,6 +420,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  box-sizing: border-box;
 }
 
 .app-box:hover {
@@ -382,8 +469,8 @@ body {
   }
   
   .profile-link {
-    padding: 10px 16px;
-    font-size: 14px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
   
   .headshot {
@@ -396,4 +483,3 @@ body {
     min-height: 100px;
   }
 }
-
